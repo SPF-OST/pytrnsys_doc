@@ -1,4 +1,4 @@
-.. _config_file:
+.. _run_simulations:
 
 Running simulations
 ===================
