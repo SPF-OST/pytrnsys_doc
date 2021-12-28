@@ -6,6 +6,10 @@ Building a dck-file
 Modular ddck-files
 ------------------
 
+.. note::
+    This section only provides a short introduction to ddck-files. A more detailed description can be found in
+    :ref:`the dedicated section <ddck_structure>`
+
 One central aspect of pytrnsys is modularization. A TRNSYS simulation is fully defined by an often lengthy dck-file
 containing all relevant information. Several UNITS of different and/or the same TYPES can be contained in such a file.
 To make the creation of such a dck-file more flexible pytrnsys composes a dck-file from several modular files, which

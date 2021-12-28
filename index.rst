@@ -33,6 +33,7 @@ Table of contents
    guide/gui
    guide/run_simulation
    guide/process_data
+   guide/ddck_structure
 
 Acknowledgments
 ===============
