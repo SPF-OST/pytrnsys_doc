@@ -6,7 +6,7 @@
 pytrnsys
 ========
 
-Testtesttest
+Testtesttesttest
 
 A short presentation (15 min) of pytrnsys and its features can be found in the following
 `YouTube video <https://www.youtube.com/watch?v=B1BSjYRKuVM>`_.
