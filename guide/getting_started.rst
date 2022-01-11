@@ -20,9 +20,9 @@ as a requirement. For further information on the GUI and on how to install it, p
 Prerequesites
 -------------
 
-At the moment, TRNSYS 17 and TRNSYS 18 (32 bit) are supported. In order to use pytrnsys, you need to have TRNSYS
-installed. Several original types are delivered with pytrnsys. For those you'll manually need to copy the dll-files
-from::
+At the moment, TRNSYS 17 and TRNSYS 18 (32 bit) are supported. In order to use pytrnsys, you need to have
+`TRNSYS <http://www.trnsys.com/>`_ installed. Several additional types are delivered with pytrnsys. For those you'll
+manually need to copy the dll-files from::
 
     pytrnsys_data\ddcks\dlls
 
@@ -56,14 +56,14 @@ simulation results and generate plots.
 One a more detailed level this means:
 
 1. Building a dck-file, which defines the simulation
-    - The idea is to use a modular approach stacking files with the extension \*.ddck together to form a single dck
-      TRNSYS file.
+    - The concept of pytrnsys is to use a modular approach stacking files with the extension \*.ddck together to form a
+      single dck TRNSYS file.
     - The ddck files are structured in a way that they can be reused/modified easily to adpat to new cases. These
       files should be uploaded to GIT repositories if sharing/reusing is foreseen.
-    - Our core idea to build a TRNSYS dck is to use a flow solver and an hydraulic ddck file which is custom to
-      each case. A TRNSYS flow solver is a TYPE developed in house that gives the mass flow rates of all pipes and
-      components given the mass flow rates of pumps and positons of 3-way controlled valves for each time step.
-    - This hydraulic file also includes all TYPEs for the hydraulic elements such as pipes and tee-pieces. Thus,
+    - Our core idea to build a TRNSYS dck is to use a flow solver and an hydraulic ddck-file which is custom to
+      each case. The TRNSYS flow solver is a TYPE that takes the set mass flow rates of pumps and the positions of 3-way
+      controlled valves as an input for each time step and returns the mass flow rates through all pipes and components.
+    - The hydraulic ddck-file also includes all TYPEs for the hydraulic elements such as pipes and tee-pieces. Thus,
       when connecting to all elements such as solar collectors the mass flow and temperature of the pipe that
       enters the collector which has a specific format name can be used directly. That is, connection between
       elements is very easy and can be done in a fully automatic way.
@@ -73,7 +73,7 @@ One a more detailed level this means:
     - If you don't have the GUI you can still work with pytrnsys without any problem. However, you will need to
       know/connect the inputs (mass flow rates and temperatures) for each component like in normal TRNSYS. Our GUI
       and the flow solver make this almost fully automatic.
-2. Running the desired simulation(s)
+2. Running the simulation(s)
     - Once a TRNSYS dck has been generated with the method described above, by your own method or by Studio you
       can execute this dck with a lot of nice functionalities. For example you can easily run parametric studies
       in parallel and modifiy the dck file using a configuration file.
@@ -86,8 +86,9 @@ One a more detailed level this means:
       LaTeX environment.
     - The processing functionality includes monthly and hourly calculations, files with results, and different
       types of automatic plots.
-    - Basically all functionality we see is of use in general we add it into the config file. Other more project
-      specific processing we do at python level. You will see how to do this at the developer's guide section.
+    - Basically all functionality can be added such that it can be activated from the config file. For more project
+      specific processing it might be better to work on python level. You will see how to do this at the developer's
+      guide section.
     - Our method of processing TRNSYS simulations is based on our method to build a TRNSYS dck, so to fully use
       all functionalities you will need to change your own dck to have a similar structure as the one we have. For
       example the results are always stored in a temp subfolder and to do the automatic energy balance you need to

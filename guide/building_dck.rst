@@ -14,7 +14,7 @@ One central aspect of pytrnsys is modularization. A TRNSYS simulation is fully d
 containing all relevant information. Several UNITS of different and/or the same TYPES can be contained in such a file.
 To make the creation of such a dck-file more flexible pytrnsys composes a dck-file from several modular files, which
 were given the novel extension ``ddck``. Though there are a few special cases such ddck-file are typically corresponding
-to one component in the system simulation, e.g. a heat pump. They are structured in the following manner:
+to one component in the system simulation, e.g. a heat pump. The ddck-files are structured in the following manner:
 
     1. Name of the component
     2. Change log

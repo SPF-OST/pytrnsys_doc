@@ -9,11 +9,12 @@ pytrnsys
 A short presentation (15 min) of pytrnsys and its features can be found in the following
 `YouTube video <https://www.youtube.com/watch?v=B1BSjYRKuVM>`_.
 
-The pytrnsys package provides a complete python-based framework to run, post-process, plot, and report TRNSYS
-simulations. It is designed to give researchers a fast, fully automatized, and reproducible way to execute and share
+The pytrnsys package provides a complete python-based framework to build, post-process, plot, and report TRNSYS
+simulations. It is designed to give users a fast, fully automatized, and reproducible way to execute and share
 TRNSYS simulations by the use of a single short configuration file. In addition, a large variety of commands is
 accessible to post-process simulation results in one shot. This functionality extends beyond processing TRNSYS generated
-data and can also be used for generic data.
+data and can also be used for analyzing generic data. These could be, e.g., measurement data that are structured in a
+similar way as the TRNSYS results.
 
 The package was developed at the `SPF - Institute for Solar Technology <https://www.spf.ch/>`_ at the `OST - Eastern
 Switzerland University of Applied Sciences <https://www.ost.ch/>`_.
