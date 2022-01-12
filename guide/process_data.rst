@@ -322,7 +322,10 @@ Plotting monthly data
     If an argument in the code excerpts below is set in square brackets, it is optional.
 
 ``monthlyBars``
-    Plots a monthly bar plot that shows all variables grouped side by side.
+    Plots a monthly bar plot that shows all variables grouped side by side. The name of the pdf to be created needs to
+    specified through ``pdf name``::
+
+        stringArray monthlyBars "pdf name" "variable 1" "variable 2" ...
 
     .. image:: ./resources/NBar.png
         :width: 400
@@ -331,8 +334,8 @@ Plotting monthly data
 ``monthlyBalance``
     Custom monthly balance. The sign of the values can be inverted by adding a - in front of the variable name. If
     positive and negative values don't add up to zero, the imbalance is shown as black bars. The name of the pdf to be
-    created needs to specified through ``pdf name``. When adding the optional ``style:relative`` the bars will be shown
-    as values relative to the positive sum of the monthly energy values::
+    created needs to be specified through ``pdf name``. When adding the optional ``style:relative`` the bars will be
+    shown as values relative to the positive sum of the monthly energy values::
 
         stringArray monthlyBalance "pdf name" ["style:relative"] "variable 1" "variable 2" ...
 
@@ -345,7 +348,10 @@ Plotting monthly data
         :alt: SPF
 
 ``monthlyStackedBar``
-    Similar to the ``monthlyBalance`` but without showing the imbalance.
+    Similar to the ``monthlyBalance`` but without showing the imbalance. The name of the pdf to be created needs to
+    be specified through ``pdf name``::
+
+        stringArray monthlyStackedBar "pdf name" "variable 1" "variable 2" ...
 
     .. image:: ./resources/StackedBar.png
         :width: 400
