@@ -228,7 +228,35 @@ the configuration file statically or with variations that result in parametric r
     simulated, this can be done with the command::
 
         changeDDckFile CityBAS_dryK CityBAS_dryK CityCDF_dryK CityLUG_dryK
+        
+random variations
+~~~~~~~~~~
+If the influence of many different parameters is of interest, random variations might be needed. Random variations can be done with the keywords ``randvar``, ``randvarddck`` and ``nrandvar``. If using random variations, do not include any regular variations and be aware, that only one ddck can be changed with ``randvarddck``. 
 
+``randvar``
+    Random variations of trnsys constants can be executed by adding one or multiple lines like the following::
+
+        randvar variationName trnsysVariable minValue maxValue stepSize
+
+    Here, ``variationName`` defines how the variation will be noted in the names of the dck-files to be generated. The ``minValue`` and ``maxValue`` are the minimum and maximum Value that the ``trnsysVariable`` will take, respectively. ``stepSize`` describes the step size of the values that can be taken between ``minValue`` and ``maxValue``. Make sure that ``maxValue`` = ``minValue`` + ``n`` * ``stepSize``. Where ``n`` is an integer. In the following example, the storage size will be taken between 0.5 m3 and 1 m3 in steps of 0.1, so it will have the options 0.5, 0.6, 0.7, 0.8, 0.9, 1::
+    
+        randvar Vtes storageSize 0.5 1 0.1
+
+    
+``randvarddck``
+    Random variations of ddcks can be included with the following command::
+    
+        randvarddck originalDdck ddckVariation1 ddckVariation2 ddckVariation3 ... ddckVariationn
+        
+    For every iteration pytrnsys then takes randomly one of the n ``ddckVariation`` instead of the ``originalDdck``, that is specified in the used ddcks section. Currently, only one ddck can be randomly varied.
+    
+``nrandvar``
+    This keyword describes the total number of random variations to be simulated, if e.g. 1000 variations should be simulated, the following line has to be added::
+    
+        nrandvar 1000
+
+
+        
 ddck files
 ----------
 
