@@ -230,8 +230,8 @@ the configuration file statically or with variations that result in parametric r
         changeDDckFile CityBAS_dryK CityBAS_dryK CityCDF_dryK CityLUG_dryK
         
 random variations
-~~~~~~~~~~
-If the influence of many different parameters is of interest, random variations might be needed. Random variations can be done with the keywords ``randvar``, ``randvarddck`` and ``nrandvar``. If using random variations, do not include any regular variations and be aware, that only one ddck can be changed with ``randvarddck``. 
+~~~~~~~~~~~~~~~~~
+If the influence of many different parameters is of interest, random variations might be needed. Random variations can be done with the keywords ``randvar``, ``randvarddck``, ``nrandvar`` and ``randseed``. If using random variations, do not include any regular variations and be aware, that only one ddck can be changed with ``randvarddck``.
 
 ``randvar``
     Random variations of trnsys constants can be executed by adding one or multiple lines like the following::
@@ -255,8 +255,18 @@ If the influence of many different parameters is of interest, random variations 
     
         nrandvar 1000
 
+    Default value of nrandvar is 100.
 
-        
+``randseed``
+    This keyword describes an integer, that is used as a seed. If a seed is set, then rerunning a simulation will yield the same variations. A different integer will yield different random variations.
+
+    Example::
+
+        randseed 1
+
+    If randseed is not defined or of it is set to None, then the variations will be different every time.
+
+
 ddck files
 ----------
 
