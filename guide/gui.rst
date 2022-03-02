@@ -351,7 +351,7 @@ button in the tool bar.
 (iii) Export connection.json
 ****************************
 
-After that, the JSON-file consisting the variable names for mass flow rate and temperature for each port needs to be 
+After that, the JSON-file consisting of the variable names for mass flow rate and temperature for each port needs to be 
 exported. This is done by hitting the ``Export connection.json`` button under ``Project`` tool bar.
 
 (iv) Export dck
