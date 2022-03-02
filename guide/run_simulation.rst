@@ -141,6 +141,12 @@ Paths
 
         string addResultsFolder "path-to-your-results-folder"
 
+``pathToConnectionInfo``
+    Specify the path to the connection.JSON, which you would like to use to replace the placeholders in the ddck-files. 
+    It overrules the behaviour of replacing the placeholders with the defaults::
+
+        string pathToConnectionInfo "path-to-your-project-folder\connection.json"
+
 Definition of path alias
     You can define an alias for a path to be used in a different place. If, e.g., you want to load many ddck-files from
     "C:\\GIT\\pytrnsys\\data\\ddcks" you can give this path an alias such as "PYTRNSYS$". The "$" at the end of the alias
