@@ -100,10 +100,10 @@ Simulation control
         string runType "runFromConfig"
 
 ``pathToConnectionInfo``
-    Specify the path to the connection.JSON, which you would like to use to replace the placeholders in the ddck-files. 
-    It overrules the behaviour of replacing the placeholders with the defaults::
+    Specify the path to the DdckPlaceHolderValue.JSON, which you would like to use to replace the placeholders in the 
+    ddck-files. It overrules the behaviour of replacing the placeholders with the defaults::
 
-        string pathToConnectionInfo "path-to-your-project-folder\connection.json"
+        string pathToConnectionInfo "path-to-your-project-folder\DdckPlaceHolderValue.json"
 
 Tracking
 --------

@@ -107,7 +107,8 @@ and the ddck-files included into the ddck-folder of your project.
         :width: 50
         :alt: process simulation
 
-``Export connection.json`` Export a JSON-file specifying each port's variable name for mass flow rate and temperature.
+``Export DdckPlaceHolderValue.json`` Export a JSON-file specifying each port's variable name for mass flow rate and 
+temperature.
 
 Edit
 ^^^^
@@ -348,11 +349,11 @@ button in the tool bar.
     :width: 50
     :alt: export hydraulic.ddck
 
-(iii) Export connection.json
+(iii) Export DdckPlaceHolderValue.json
 ****************************
 
 After that, the JSON-file consisting of the variable names for mass flow rate and temperature for each port needs to be 
-exported. This is done by hitting the ``Export connection.json`` button under ``Project`` tool bar.
+exported. This is done by hitting the ``Export DdckPlaceHolderValue.json`` button under ``Project`` tool bar.
 
 (iv) Export dck
 ****************
