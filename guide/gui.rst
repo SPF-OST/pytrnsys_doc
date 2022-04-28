@@ -107,6 +107,9 @@ and the ddck-files included into the ddck-folder of your project.
         :width: 50
         :alt: process simulation
 
+``Export PlaceHolder JSON`` Export a json-file specifying each port's variable name for mass flow rate and
+temperature.
+
 Edit
 ^^^^
 
@@ -346,7 +349,13 @@ button in the tool bar.
     :width: 50
     :alt: export hydraulic.ddck
 
-(iii) Export dck
+(iii) Export DdckPlaceHolderValues.json
+****************************
+
+After that, the json-file consisting of the variable names for mass flow rate and temperature for each port needs to be
+exported. This is done by hitting the ``Export PlaceHolder JSON`` button under ``Project`` tool bar.
+
+(iv) Export dck
 ****************
 
 When all files needed are loaded and/or exported the dck-file (TRNSYS) can be built. Either this is done without
