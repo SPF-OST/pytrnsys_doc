@@ -148,6 +148,12 @@ Remaining tool bar items
         :width: 50
         :alt: delete diagram
 
+Component library and port information
+--------------------------------------
+
+Port information
+^^^^^^^^^^^^^^^^
+
 The file structure of a project
 -------------------------------
 
