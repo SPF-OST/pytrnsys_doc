@@ -154,6 +154,17 @@ Component library and port information
 Port information
 ^^^^^^^^^^^^^^^^
 
+Information below is shown in the widget on bottom left of the GUI when a port is hovered over. 
+
+``ID`` A unique identifier that is associated with each port when a component is dropped in the diagram.
+
+``Names`` The name of the port and its flow direction. The port name is needed in the placeholder statement in ddck.
+
+``Block`` The name of the component that the port is under.
+
+``Connections`` The name of the pipe that is connected to the port. The pipe name can be used to replace the placeholder
+statement if needed.
+
 The file structure of a project
 -------------------------------
 
