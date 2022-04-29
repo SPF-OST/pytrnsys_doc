@@ -107,7 +107,7 @@ and the ddck-files included into the ddck-folder of your project.
         :width: 50
         :alt: process simulation
 
-``Export PlaceHolder JSON`` Export a json-file specifying each port's variable name for mass flow rate and
+``Export ddck placeholder values JSON file`` Export a json-file specifying each port's variable name for mass flow rate and
 temperature.
 
 Edit
@@ -147,6 +147,24 @@ Remaining tool bar items
     .. image:: ./resources/trash.png
         :width: 50
         :alt: delete diagram
+
+Component library and port information
+--------------------------------------
+
+Port information
+^^^^^^^^^^^^^^^^
+
+The following information is shown on the widget on the bottom left of the GUI when the cursor is hovering over a port:
+
+``ID`` A unique identifier that is associated with each port when a component is dropped in the diagram.
+
+``Names`` The name of the port and its default function (input or output) determining the positive technical flow
+direction through the component. The port name is used in the ddck-file corresponding to the component.
+
+``Block`` The name of the component to which the port is attached.
+
+``Connections`` The name of the pipe that is connected to the port. This name will be used when the placeholder
+statements are automatically replaced.
 
 The file structure of a project
 -------------------------------
@@ -353,7 +371,7 @@ button in the tool bar.
 ****************************
 
 After that, the json-file consisting of the variable names for mass flow rate and temperature for each port needs to be
-exported. This is done by hitting the ``Export PlaceHolder JSON`` button under ``Project`` tool bar.
+exported. This is done by hitting the ``Export ddck placeholder values JSON file`` button under ``Project`` tool bar.
 
 (iv) Export dck
 ****************
