@@ -58,6 +58,8 @@ they are easily accessible to be connected to the hydraulics file::
 
     ** which outputs will be used to connect the hydraulic solver
     ** typically tOutType will be defined here to be used in the hydraulic ddck
+    ** tOutType with placeholder:
+    ** @temp(PortName, DefaultName) = tOut
 
 Outputs to the energy balance
 -----------------------------
@@ -344,7 +346,8 @@ type1_CONSTANTS_cOBRAak2_8v.ddck::
     *******************************
 
 
-Placeholder statements with specific syntax can be added to the ``inputs from hydraulic solver`` in ddck::
+Placeholder statements with specific syntax can be added to the ``inputs from hydraulic solver`` and ``Outputs to the 
+hydraulic solver`` in ddck::
 
     *******************************
     **BEGIN Type1.ddck 
@@ -353,7 +356,7 @@ Placeholder statements with specific syntax can be added to the ``inputs from hy
     *****************************************
     ** Contact person : Dani Carbonell    
     ** Creation date  : 10.01.2010
-    ** Last changes   : 04.03.2022
+    ** Last changes   : 18.05.2022
     *****************************************
     
     ***************************************************************************
@@ -365,14 +368,14 @@ Placeholder statements with specific syntax can be added to the ``inputs from hy
     ** inputs from hydraulic solver
     ***********************************
     EQUATIONS 2
-    TCollIn = @temp(input, TPiColIn)
-    MfrColl = ABS(@mfr(input, MfrPiColIn))
+    TCollIn = @temp(In, TPiColIn)
+    MfrColl = ABS(@mfr(In, MfrPiColIn))
     
     ***********************************
     ** outputs to hydraulic solver
     ***********************************
     EQUATIONS 1
-    TCollOut = [28,1]
+    @temp(Out, TCollOut) = [28,1]
     
     ***********************************
     ** outputs to other ddck
