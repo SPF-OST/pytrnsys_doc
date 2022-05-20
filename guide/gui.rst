@@ -107,8 +107,8 @@ and the ddck-files included into the ddck-folder of your project.
         :width: 50
         :alt: process simulation
 
-``Export ddck placeholder values JSON file`` Export a json-file specifying each port's variable name for mass flow rate and
-temperature.
+``Export json-file containing connection information`` Export a json-file specifying each port's variable name for mass 
+flow rate and temperature.
 
 Edit
 ^^^^
@@ -371,7 +371,19 @@ button in the tool bar.
 ****************************
 
 After that, the json-file consisting of the variable names for mass flow rate and temperature for each port needs to be
-exported. This is done by hitting the ``Export ddck placeholder values JSON file`` button under ``Project`` tool bar.
+exported. This is done by hitting the ``Export json-file containing connection information`` button under ``Project`` 
+tool bar. Following shows the structure of a DdckPlaceHolderValues.json::
+
+    {
+        "ComponentName": {
+                "InputPortName": {
+                        "@mfr": "MfrConnectionName"
+                        "@temp": "TConnectionName"
+                },
+                "OutputPortName": {
+                        "@temp": "TComponentNameOutputPortName"
+                }
+    }
 
 (iv) Export dck
 ****************
