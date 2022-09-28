@@ -272,7 +272,7 @@ Plotting hourly data
         :alt: plotT
 
 ``plotHourly``
-    Hourly printed values can be displayed in a interactable html-plot that is created using the bokeh plotting library.
+    Hourly printed values can be displayed in an interactive HTML plot that is created using the bokeh plotting library.
 
     .. image:: ./resources/bokeh_plot.png
         :width: 400
