@@ -31,7 +31,7 @@ Simulation control
     If set to True, the TRNSYS online plotters will be left open until they are closed manually. 
     This requires ignoreOnlinePlotter to be set to False at the same time (default: False)::
 
-    bool keepOnlinePlotter True
+        bool keepOnlinePlotter True
 
 ``removePopUpWindow``
     Online plotters as well as the progress bar window are suppressed during the simulations, which corresponds to the
