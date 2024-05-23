@@ -129,7 +129,7 @@ When TRNSYS data is read in, pytrnsys will automatically create some variables. 
 
 .. _ref-generic:
   Processing generic data
------------------------
+  -----------------------
 
 To process generic data, add the following expression to the header of your configuration file::
 
