@@ -46,7 +46,7 @@ def setup(app):
 
 project = "pytrnsys"
 copyright = "2021, Institute for Solar Technology (SPF), OST Rapperswil"
-author = "Dani Carbonell, Martin Neugebauer, Damian Birchler, Jeremias Schmidli, Maike Schubert,"
+author = "Dani Carbonell, Martin Neugebauer, Damian Birchler, Jeremias Schmidli, Maike Schubert, Alex Hobé"
 
 
 # -- General configuration ---------------------------------------------------
