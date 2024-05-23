@@ -68,6 +68,8 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "README.md", "requirements.txt"]
 
+# surpress warnings due to using recommonmark
+suppress_warnings = ["UserWarning: Container node skipped: type=document"]
 
 # -- Options for HTML output -------------------------------------------------
 
