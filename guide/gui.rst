@@ -1,4 +1,4 @@
-.. __gui:
+.. _gui:
 
 The graphical user interface
 ============================
@@ -368,7 +368,7 @@ button in the tool bar.
     :alt: export hydraulic.ddck
 
 (iii) Export DdckPlaceHolderValues.json
-****************************
+***************************************
 
 After that, the json-file consisting of the variable names for mass flow rate and temperature for each port needs to be
 exported. This is done by hitting the ``Export json-file containing connection information`` button under ``Project`` 
