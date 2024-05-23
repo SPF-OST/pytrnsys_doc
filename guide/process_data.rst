@@ -128,7 +128,7 @@ When TRNSYS data is read in, pytrnsys will automatically create some variables. 
     which can be called by ``bar_Min``, ``bar_Max`` and ``bar_Avg``.
 
 .. _ref-generic:
-Processing generic data
+  Processing generic data
 -----------------------
 
 To process generic data, add the following expression to the header of your configuration file::
