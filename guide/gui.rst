@@ -1,4 +1,4 @@
-.. _gui:
+.. __gui:
 
 The graphical user interface
 ============================
