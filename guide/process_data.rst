@@ -497,4 +497,4 @@ The following processing-configuration file is part of the solar domestic hot wa
 
     ############# RESULTS FILES ##############################
     stringArray hourlyToCsv "CollectorPower" "IT_Coll_kWm2" "PColl_kWm2"
-    stringArray results  "AcollAp"  "Vol_Tes1"   "fSolar"  "volPerM2Col"  "Pdhw_kW_Tot" # values to be printed to json
+    stringArray results  "AcollAp"  "Vol_Tes1"   "fSolar"  "volPerM2Col"  "Pdhw_kW_Tot"     # values to be printed to json
