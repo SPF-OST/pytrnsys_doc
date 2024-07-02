@@ -1,6 +1,3 @@
-# pylint: skip-file
-# type: ignore
-
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -20,12 +17,8 @@ sys.path.insert(0, os.path.abspath("../"))
 
 from recommonmark.transform import AutoStructify
 
-autodoc_mock_imports = ["numpy"]
-autodoc_mock_imports = ["scipy"]
-autodoc_mock_imports = ["pandas"]
-autodoc_mock_imports = ["matplotlib"]
-autodoc_mock_imports = ["seaborn"]
-autodoc_mock_imports = ["bokeh"]
+autodoc_mock_imports = ["numpy", "scipy", "pandas", "matplotlib", "seaborn", "bokeh"]
+
 master_doc = "index"
 
 github_doc_root = "https://github.com/rtfd/recommonmark/tree/master/doc/"
@@ -45,8 +38,8 @@ def setup(app):
 # -- Project information -----------------------------------------------------
 
 project = "pytrnsys"
-copyright = "2021, Institute for Solar Technology (SPF), OST Rapperswil"
-author = "Dani Carbonell, Martin Neugebauer, Damian Birchler, Jeremias Schmidli, Maike Schubert, Alex Hobé"
+copyright = "2024, Institute for Solar Technology (SPF), OST Rapperswil"
+author = "Dani Carbonell, Damian Birchler, Alex Hobé"
 
 
 # -- General configuration ---------------------------------------------------
@@ -89,3 +82,6 @@ source_suffix = {
     ".txt": "markdown",
     ".md": "markdown",
 }
+
+# Don't color ddck snippets as Python
+highlight_language = "none"

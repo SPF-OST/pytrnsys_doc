@@ -6,11 +6,27 @@ Structure of a ddck-file
 The file sctructure of the ddck files is shown in the example.ddck file in the pytrnsys_ddck repository root.
 Each ddck should contain the following parts. Some parts can be empty if not used.
 
+Local and global variables
+--------------------------
+
+Pytrnsys knows two kinds of variables. Consider::
+
+    EQUATIONS 1
+    heatingOn = LT($Tamb, 15)
+
+Here, `heatingOn` is a "local" variable, i.e., it can only be accessed from within the current ddck
+but not from other ddcks. `$Tamb`, on the other hand, is a "global" variable: it can be accessed from
+any ddck. You can also define your own global variables; just prefix them with a dollar sign like so:
+`$myGlobalVariable`.
+
+If you really need to access a local variable from outside its ddck (e.g. to change a solar collector's area from the
+run.config) you need to prefix the variable with the component's name. I.e., if your collector is called `Coll` and its
+area is called `A` locally, you can access the variable from outside by the name `CollA`.
+
 Header
 ------
-In the header the name of the ddck as well as a contact persion, the creation date and some information
-about the last changes are specified. In addition, there is a section for general descriptions
-about the ddck::
+In the header the name of the ddck as well as a contact person, the creation date and some information
+about the last changes are specified. In addition, there is a section for a general description of the ddck::
 
     *******************************
     **BEGIN example.ddck
@@ -30,50 +46,53 @@ about the ddck::
 
 Inputs from hydraulic solver
 -----------------------------
-The pytrnsys ddcks are designed to be used in combination with the hydraulic solver type 935.
-In each timestep the hydraulic solver computes all mass flows and component input temperatures starting
-depending on the component output temperatures, the pump powers and the valve positions. Therefore,
-the mass flows and component input temperatures are outputs of the hydraulic solver that have to
-be connected to the component ddcks as inputs::
+The main inputs to a particular component/ddck are the input mass flow rates and the input temperatures for each input port.
+There is a special syntax to access these values. To access the input temperature and mass flow rates at the condenser and
+evaporator inlet (called `Cond` and `Evap`, respectively, in this example) within a heat pump ddck file, e.g., do the following::
 
     ***********************************
     ** inputs from hydraulic solver
     ***********************************
 
-    ** tIn from hydraulic
-    ** tIn from hydraulic with placeholder:
-    ** tIn = @temp(PortName, DefaultPipeName)
-    ** mIn from hydraulic
-    ** mIn from hydraulic with placeholder:
-    ** mIn = @mfr(PortName, DefaultPipeName)
+    TCondIn = @temp(CondIn) ! Condenser input temperature
+    MCond = @mfr(CondIn)  ! Condenser mass flow rate
+    
+    TEvapIn = @temp(EvapIn) ! Evaporator input temperature
+    MEvap = @mfr(EvapIn)  ! Evaporator mass flow rate
+
+Besides temperature (`@temp`) and mass flow rate (`@mfr`) you can also access the heat capacity (`@cp`) and the density
+(`@rho`) of the fluid circulating through a given port in the same way as shown above.
 
 Outputs to the hydraulic solver
 -------------------------------
-Similar to the inputs, the output temperatures of the component should be stated here, such that
-they are easily accessible to be connected to the hydraulics file::
+The main outputs of a component/ddck are the temperatures at its output ports. These can be
+specified as follows (again using the heat pump example [see above])::
 
     ***********************************
     ** outputs to hydraulic solver
     ***********************************
 
-    ** which outputs will be used to connect the hydraulic solver
-    ** typically tOutType will be defined here to be used in the hydraulic ddck
-    ** tOutType with placeholder:
-    ** @temp(PortName, DefaultName) = tOut
+    @temp(CondOut) = [20,2]
+    @temp(EvapOut) = [20,4]
+
+Here, `20` would be the unit number of your heat pump type and `2` and `4` the type's outputs corresponding
+to the condenser and evaporator output temperatures.
 
 Outputs to the energy balance
 -----------------------------
-In the processing, pytrnsys automatically computes the systems heat and electricity energy balance.
-All variables that should be collected for the energy balance have to be specified in this section according to
-the right nomenclature::
+Pytrnsys can automatically compute an energy balance of your system. In order to do that
+it needs to be told what should go into the energy balance. You can tell pytrnsys about your component/ddck's
+contribution to the energy balance like so::
 
     ******************************************************************************************
     ** outputs to energy balance in kWh and ABSOLUTE value
-    ** Following this naming standard : qSysIn_name, qSysOut_name, elSysIn_name, elSysOut_name
     ******************************************************************************************
 
-    ** Add here those variables that will go into the overall energy balance of the system
-    ** These values will be used to automatically generate the energy balance
+    @energy(heat, in, cond) = [20, 6]   ! heat going into the system and out of our HP component
+    @energy(heat, out, evap) = [20, 8]  ! heat going out of the system and into our HP component
+
+The `in` and `out` are from the system's perspective: `out` would be out of the system and into a storage, e.g.
+(i.e. when the storage is charged `@energy(heat, out, ...)` would be positive).
 
 Dependencies with other ddck files
 ----------------------------------
@@ -169,8 +188,8 @@ hot water system::
     ***********************************
 
     EQUATIONS 2
-    TCollIn = TPiColIn
-    MfrColl = ABS(MfrPiColIn)
+    TCollIn = @temp(CollIn)
+    MfrColl = @mfr(CollIn)
 
     ***********************************
     ** outputs to hydraulic solver
@@ -374,8 +393,9 @@ hydraulic solver`` in ddck::
     ***********************************
     ** outputs to hydraulic solver
     ***********************************
-    EQUATIONS 1
-    @temp(Out, TCollOut) = [28,1]
+    EQUATIONS 2
+    TCollOut = [28,1]
+    @temp(Out) = TCollOut
     
     ***********************************
     ** outputs to other ddck
