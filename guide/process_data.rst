@@ -451,6 +451,15 @@ Plotting parametric data
         :width: 400
         :alt: scatter difference
 
+``collectJsonsIntoCsv``
+    Collect all ``*-results.json`` files into a CSV file.
+
+    This is useful if you want to do your own comparison plots or general post-processing across parametric runs.
+    
+    .. code-block::
+
+        string collectJsonsIntoCsv "all_results.csv"
+
 Example
 -------
 The following processing-configuration file is part of the solar domestic hot water example system::
