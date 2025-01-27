@@ -124,8 +124,9 @@ When TRNSYS data is read in, pytrnsys will automatically create some variables. 
     ``foo_Tot``. Furthermore, ``Cum_foo`` is created, which is an array of the accumulated values of ``foo`` over the
     months.
 
-5.  From hourly values of ``bar`` the minimum, maximum and average values over the simulated period are calculated,
-    which can be called by ``bar_Min``, ``bar_Max`` and ``bar_Avg``.
+5.  The minimum, maximum and average values over the simulated period are calculated as follows:
+    ``bar_Min``, ``bar_Max`` and ``bar_Avg``.
+    These values correspond to either the timestep values, or the hourly values, if the timestep values are not available for the given variable ``bar``.
 
 .. _ref-generic:
   Processing generic data
