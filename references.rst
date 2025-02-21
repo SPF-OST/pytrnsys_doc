@@ -54,8 +54,8 @@ Projects in which pytrnsys was used
 #. BigStoreDH_ (2022-2024), funded by the Swiss Federal Office of Energy
 #. HE `BEST-Storage`_ (2023-2026), funded by Horizon Europe
 #. HE `RE-WITCH`_ (2024-2028), funded by Horizon Europe
-#. RESULTES_ (2024-2027), funnded by the Swiss Federal Office of Energy
-#. SwissSTES_ (2024-), funnded by the Swiss Innovation Agency
+#. RESULTES_ (2024-2027), funded by the Swiss Federal Office of Energy
+#. SwissSTES_ (2024-), funded by the Swiss Innovation Agency
 
 
 
