@@ -46,7 +46,7 @@ Projects in which pytrnsys was used
 #. Big-Ice (2018-2021), funded by the Swiss Federal Office of Energy |big-ice|_
 #. TRI-HP (2019-2023), funded by EU Horizon 2020 |tri-hp|_
 #. PLURAL_ (2020-2024), funded by EU Horizon 2020 
-#. EU ERA-NET Newcline (2021-2024), |newcline|_
+#. EU ERA-NET Newcline (2021-2024) |newcline|
 #. `SolResHC II`_ (2021-2023), funded by the Swiss Federal Office of Energy
 #. Kliko_ (2022-2023), funded by the Swiss Federal Office of Energy
 #. Optipower_ (2022-2023), funded by the Swiss Federal Office of Energy
